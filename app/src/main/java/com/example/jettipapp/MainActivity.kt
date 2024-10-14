@@ -1,9 +1,7 @@
 package com.example.jettipapp
 
 import android.os.Bundle
-import android.transition.Slide
 import android.util.Log
-import android.widget.Space
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -26,7 +24,6 @@ import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Remove
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.RangeSlider
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Slider
 import androidx.compose.material3.Surface
@@ -58,8 +55,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-
-
             JetTipAppTheme {
                 App {
                     MainContent()
@@ -114,7 +109,6 @@ private fun TopHeader(
 @Preview
 @Composable
 fun MainContent() {
-
     val splitByState = remember {
         mutableIntStateOf(1)
     }
@@ -157,9 +151,6 @@ fun BillForm(
 
     val tipPercentage = (sliderPositionState.floatValue * 100).toInt()
 
-
-
-
     Column {
         TopHeader(
             totalPerPerson = totalPerPersonState.doubleValue,
@@ -171,7 +162,6 @@ fun BillForm(
             shape = RoundedCornerShape(corner = CornerSize(8.dp)),
             border = BorderStroke(width = 1.dp, color = Color.LightGray)
         ) {
-
             Column(
                 modifier = Modifier.padding(6.dp),
                 verticalArrangement = Arrangement.Top,
@@ -247,7 +237,6 @@ fun BillForm(
                             )
                         }
                     }
-//
 
                     /** Tip row **/
                     Row(
@@ -310,6 +299,4 @@ fun BillForm(
             }
         }
     }
-
 }
-
